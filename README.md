@@ -1,5 +1,7 @@
 # StyleX dev CSS arrives after the module that defines it has evaluated
 
+Reported upstream as [facebook/stylex#1919](https://github.com/facebook/stylex/issues/1919).
+
 Minimal reproduction for `@stylexjs/unplugin` with Vite in dev mode. When a module that uses StyleX is loaded after the page has started, its CSS is not applied when that module evaluates. It arrives some time later, anywhere from a few milliseconds to a little over 150ms.
 
 Only Vite and `@stylexjs/unplugin` are involved; React, Storybook and Vitest are not needed to trigger it. Vitest is here to show the most visible consequence: a browser test that checks styles fails.
